@@ -18,6 +18,22 @@
     />
   </head>
   <body>
+    <!--
+      Formulaire de détection Netlify.
+      Netlify analyse le HTML au moment du build pour repérer les formulaires.
+      Le site étant rendu par React, le vrai formulaire n'existe pas dans ce
+      fichier : cette copie masquée sert uniquement à déclarer les champs.
+      Toute modification des champs de Contact.tsx doit être répercutée ici.
+    -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="contact" />
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <textarea name="project"></textarea>
+      <input name="bot-field" />
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

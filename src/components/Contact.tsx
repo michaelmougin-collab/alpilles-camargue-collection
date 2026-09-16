@@ -10,13 +10,27 @@ const labelClass =
   'pointer-events-none absolute left-0 top-2 text-stone transition-all duration-300 peer-focus:-top-3.5 peer-focus:text-[0.7rem] peer-focus:tracking-[0.2em] peer-focus:text-gold peer-[:not(:placeholder-shown)]:-top-3.5 peer-[:not(:placeholder-shown)]:text-[0.7rem] peer-[:not(:placeholder-shown)]:tracking-[0.2em] peer-[:not(:placeholder-shown)]:text-stone'
 
 export function Contact() {
-  const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const sent = status === 'sent'
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Aucun backend pour l'instant : on confirme visuellement la prise en compte.
-    // Brancher ici l'envoi réel (email, API, service de formulaire).
-    setSent(true)
+    setStatus('sending')
+
+    // Netlify Forms attend un POST encodé en formulaire, jamais du JSON.
+    const body = new URLSearchParams()
+    new FormData(e.currentTarget).forEach((value, key) => body.append(key, String(value)))
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      })
+      setStatus(res.ok ? 'sent' : 'error')
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -82,11 +96,24 @@ export function Contact() {
               ) : (
                 <motion.form
                   key="form"
+                  name="contact"
+                  method="POST"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
                   onSubmit={handleSubmit}
                   initial={{ opacity: 1 }}
                   exit={{ opacity: 0, y: -20 }}
                   className="space-y-10"
                 >
+                  {/* Identifie le formulaire auprès de Netlify. */}
+                  <input type="hidden" name="form-name" value="contact" />
+                  {/* Piège à robots : invisible, un humain ne le remplit jamais. */}
+                  <p className="hidden">
+                    <label>
+                      Ne pas remplir <input name="bot-field" />
+                    </label>
+                  </p>
+
                   <Field id="name" label={contact.fields.name} type="text" autoComplete="name" />
                   <Field id="email" label={contact.fields.email} type="email" autoComplete="email" />
                   <Field id="phone" label={contact.fields.phone} type="tel" autoComplete="tel" />
@@ -105,15 +132,30 @@ export function Contact() {
                     </label>
                   </div>
 
-                  <button
-                    type="submit"
-                    className="group inline-flex w-full items-center justify-center gap-3 bg-ink py-5 text-[0.82rem] tracking-[0.14em] text-ivory transition-colors duration-500 hover:bg-gold sm:w-auto sm:px-14"
-                  >
-                    {contact.cta}
-                    <span className="transition-transform duration-500 group-hover:translate-x-1">
-                      →
-                    </span>
-                  </button>
+                  <div>
+                    <button
+                      type="submit"
+                      disabled={status === 'sending'}
+                      className="group inline-flex w-full items-center justify-center gap-3 bg-ink py-5 text-[0.82rem] tracking-[0.14em] text-ivory transition-colors duration-500 hover:bg-gold disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:px-14"
+                    >
+                      {status === 'sending' ? contact.sending : contact.cta}
+                      <span className="transition-transform duration-500 group-hover:translate-x-1">
+                        →
+                      </span>
+                    </button>
+
+                    {status === 'error' && (
+                      <p className="mt-5 text-[0.9rem] leading-relaxed text-stone">
+                        {contact.error}{' '}
+                        <a
+                          href={`mailto:${site.email}`}
+                          className="text-ink underline underline-offset-4 transition-colors hover:text-gold"
+                        >
+                          {site.email}
+                        </a>
+                      </p>
+                    )}
+                  </div>
                 </motion.form>
               )}
             </AnimatePresence>

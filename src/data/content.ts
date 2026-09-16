@@ -262,6 +262,8 @@ export const contact = {
   title: 'Présentons votre projet.',
   text: 'Confiez-nous quelques mots sur votre projet. Nous vous recontactons personnellement, en toute discrétion.',
   cta: 'Être rappelé',
+  sending: 'Envoi…',
+  error: 'L’envoi n’a pas abouti. Écrivez-nous directement à',
   fields: {
     name: 'Nom',
     email: 'Email',
