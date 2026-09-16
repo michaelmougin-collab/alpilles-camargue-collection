@@ -1,0 +1,60 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Palette — sobre, chaude, minérale */
+  --color-ivory: #f6f3ee; /* blanc cassé */
+  --color-paper: #faf8f4; /* blanc cassé plus clair */
+  --color-ink: #1c1a17; /* noir chaud */
+  --color-graphite: #35322d; /* noir adouci */
+  --color-stone: #7c766b; /* gris chaud */
+  --color-mist: #a8a196; /* gris chaud clair */
+  --color-sand: #e7dfd1; /* beige pierre clair */
+  --color-clay: #c9bda6; /* beige pierre */
+  --color-gold: #a98b5e; /* doré discret */
+
+  /* Typographies */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  /* Rythme */
+  --spacing-section: 9rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    letter-spacing: 0.01em;
+  }
+
+  ::selection {
+    background-color: color-mix(in srgb, var(--color-gold) 28%, transparent);
+    color: var(--color-ink);
+  }
+}
+
+@layer utilities {
+  /* Petit label en capitales espacées — signature "maison de luxe" */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-size: 0.72rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+  }
+
+  .u-line {
+    width: 3.5rem;
+    height: 1px;
+    background-color: var(--color-gold);
+  }
+}
