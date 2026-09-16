@@ -1,0 +1,15 @@
+# Configuration de déploiement Netlify
+# Site statique produit par Vite : `npm run build` génère dist/.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Cache long sur les fichiers versionnés par Vite (hash dans le nom).
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
