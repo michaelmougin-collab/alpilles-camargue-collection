@@ -8,6 +8,11 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# Fonctions servant l'authentification du CMS (/admin).
+# Chaque fonction déclare elle-même son chemin (/api/auth, /api/callback).
+[functions]
+  directory = "netlify/functions"
+
 # Cache long sur les fichiers versionnés par Vite (hash dans le nom).
 [[headers]]
   for = "/assets/*"

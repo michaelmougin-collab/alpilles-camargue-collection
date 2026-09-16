@@ -1,0 +1,36 @@
+{
+  "eyebrow": "Nos services",
+  "title": "Un savoir-faire complet, au service d’une seule ambition : la vôtre.",
+  "items": [
+    {
+      "index": "01",
+      "title": "Acquisition",
+      "text": "Recherche confidentielle de propriétés d’exception, y compris hors marché, et négociation menée dans votre seul intérêt."
+    },
+    {
+      "index": "02",
+      "title": "Valorisation patrimoniale",
+      "text": "Conseil stratégique pour révéler et faire croître la valeur d’un bien, de la rénovation à l’optimisation de sa destination."
+    },
+    {
+      "index": "03",
+      "title": "Location haut de gamme",
+      "text": "Mise en valeur et gestion discrète de propriétés en location saisonnière de prestige, avec un soin d’hôtellerie."
+    },
+    {
+      "index": "04",
+      "title": "Investisseurs étrangers",
+      "text": "Accompagnement des clients suisses et internationaux dans un investissement serein en France, à chaque étape."
+    },
+    {
+      "index": "05",
+      "title": "Coordination des partenaires",
+      "text": "Interface unique avec notaires, fiscalistes, architectes et artisans, pour une exécution fluide et maîtrisée."
+    },
+    {
+      "index": "06",
+      "title": "Accompagnement personnalisé",
+      "text": "Une relation de long terme, sur mesure, où l’écoute et la disponibilité priment sur le volume."
+    }
+  ]
+}

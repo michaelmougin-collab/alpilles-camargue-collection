@@ -1,0 +1,77 @@
+{
+  "eyebrow": "La collection",
+  "title": "Des mas des Alpilles aux maisons de Camargue.",
+  "intro": "Un aperçu de l’art de vivre que nous accompagnons — propriétés présentées à titre d’illustration, dans le plus grand respect de la confidentialité.",
+  "items": [
+    {
+      "title": "Bastide en lavande",
+      "place": "Saint-Rémy-de-Provence",
+      "detail": "Domaine & champs de lavande",
+      "category": "mas",
+      "image": "https://images.unsplash.com/photo-1561718541-42d8a5e5792b?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
+      "title": "Mas au toit de tuiles",
+      "place": "Alpilles",
+      "detail": "Pierre ancienne, oliveraie",
+      "category": "mas",
+      "image": "https://images.unsplash.com/photo-1779777847760-0c0278ff8fb6?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
+      "title": "Maisons au bord de l’eau",
+      "place": "Les Saintes-Maries-de-la-Mer",
+      "detail": "Façades claires, plain-pied",
+      "category": "camargue",
+      "image": "https://images.unsplash.com/photo-1675093470046-519ce18a2d51?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
+      "title": "Demeure fleurie",
+      "place": "Maussane-les-Alpilles",
+      "detail": "Jardin clos, glycine",
+      "category": "mas",
+      "image": "https://images.unsplash.com/photo-1660851976151-2325f1ce9859?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
+      "title": "Domaine équestre",
+      "place": "Camargue",
+      "detail": "Manade, chevaux camarguais",
+      "category": "camargue",
+      "image": "https://images.unsplash.com/photo-1643790397054-947867b0c327?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
+      "title": "Bastide & jardins",
+      "place": "Eygalières",
+      "detail": "Parc paysager, oliviers",
+      "category": "mas",
+      "image": "https://images.unsplash.com/photo-1780761152169-c298c98ff7f2?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
+      "title": "Propriété des marais",
+      "place": "Camargue",
+      "detail": "Horizon & roselières",
+      "category": "camargue",
+      "image": "https://images.unsplash.com/photo-1592056311354-82e8f59fc01a?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
+      "title": "Maison de village",
+      "place": "Les Baux-de-Provence",
+      "detail": "Ruelles de pierre",
+      "category": "mas",
+      "image": "https://images.unsplash.com/photo-1782039361562-35cdf7239d57?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
+      "title": "Mas de manade",
+      "place": "Camargue intérieure",
+      "detail": "Terres & pâtures",
+      "category": "camargue",
+      "image": "https://images.unsplash.com/photo-1602174230639-9fb1cfb980f8?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
+      "title": "Intérieur d’exception",
+      "place": "Arles",
+      "detail": "Pierre & matières nobles",
+      "category": "mas",
+      "image": "https://images.unsplash.com/photo-1781795035627-fa93f2863bba?auto=format&fit=crop&w=1600&q=80"
+    }
+  ]
+}

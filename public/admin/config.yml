@@ -1,0 +1,159 @@
+# ─────────────────────────────────────────────────────────────
+# Configuration du CMS (Sveltia).
+# Décrit les champs que l'on peut modifier depuis /admin.
+# Chaque enregistrement écrit directement dans le dépôt GitHub,
+# ce qui déclenche une reconstruction du site (1 à 2 minutes).
+# ─────────────────────────────────────────────────────────────
+
+backend:
+  name: github
+  repo: michaelmougin-collab/alpilles-camargue-collection
+  branch: main
+  # Authentification assurée par le site lui-même (netlify/functions).
+  base_url: https://alpillesetcamarguecollection.com
+  auth_endpoint: api/auth
+
+# Les photos déposées atterrissent dans public/images/ et sont
+# référencées dans les pages par /images/nom-du-fichier.jpg
+media_folder: public/images
+public_folder: /images
+
+locale: fr
+publish_mode: simple
+
+collections:
+  - name: contenu
+    label: Contenu du site
+    files:
+      # ── Identité ───────────────────────────────────────────
+      - name: site
+        label: Identité et coordonnées
+        file: content/site.json
+        description: Le nom du cabinet et les coordonnées affichées sur le site.
+        fields:
+          - { name: name, label: Nom, widget: string }
+          - { name: suffix, label: Suffixe, widget: string, hint: "Le mot placé sous le nom (« Collection »)." }
+          - { name: monogram, label: Monogramme, widget: string, hint: "Deux lettres, utilisées comme signature graphique." }
+          - { name: tagline, label: Phrase de présentation, widget: text }
+          - { name: email, label: Adresse email, widget: string }
+          - { name: phone, label: Téléphone, widget: string, hint: "Format international, par exemple +33 6 12 34 56 78." }
+
+      # ── Accueil ────────────────────────────────────────────
+      - name: hero
+        label: Accueil (première page)
+        file: content/hero.json
+        description: Le grand visuel d'ouverture et son texte.
+        fields:
+          - { name: eyebrow, label: Sur-titre, widget: string, hint: "Le petit texte en majuscules au-dessus du titre." }
+          - { name: titleLine1, label: Titre — première ligne, widget: string }
+          - { name: titleLine2, label: Titre — seconde ligne, widget: string }
+          - { name: subtitle, label: Sous-titre, widget: text }
+          - { name: cta, label: Texte du bouton, widget: string }
+          - { name: image, label: Photo de fond, widget: image, hint: "Photo très large de préférence, elle occupe tout l'écran." }
+
+      # ── Le cabinet ─────────────────────────────────────────
+      - name: intro
+        label: Le cabinet
+        file: content/intro.json
+        fields:
+          - { name: eyebrow, label: Sur-titre, widget: string }
+          - { name: title, label: Titre, widget: text }
+          - name: paragraphs
+            label: Paragraphes
+            widget: list
+            field: { name: paragraph, label: Paragraphe, widget: text }
+          - { name: image, label: Photo, widget: image }
+          - { name: signature, label: Phrase de signature, widget: string }
+
+      # ── Services ───────────────────────────────────────────
+      - name: services
+        label: Services
+        file: content/services.json
+        fields:
+          - { name: eyebrow, label: Sur-titre, widget: string }
+          - { name: title, label: Titre, widget: text }
+          - name: items
+            label: Les services
+            label_singular: service
+            widget: list
+            summary: "{{fields.index}} — {{fields.title}}"
+            fields:
+              - { name: index, label: Numéro, widget: string, hint: "Deux chiffres, par exemple 01." }
+              - { name: title, label: Intitulé, widget: string }
+              - { name: text, label: Description, widget: text }
+
+      # ── Territoires ────────────────────────────────────────
+      - name: territories
+        label: Territoires
+        file: content/territories.json
+        fields:
+          - { name: eyebrow, label: Sur-titre, widget: string }
+          - { name: title, label: Titre, widget: text }
+          - { name: intro, label: Texte d'introduction, widget: text }
+          - name: items
+            label: Les lieux
+            label_singular: lieu
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Nom du lieu, widget: string }
+              - { name: note, label: Mention, widget: string, hint: "Quelques mots sous le nom." }
+              - { name: image, label: Photo, widget: image }
+              - { name: wide, label: Pleine largeur, widget: boolean, default: false, hint: "Coché, le lieu occupe toute la largeur de la grille." }
+
+      # ── Collection ─────────────────────────────────────────
+      - name: gallery
+        label: Collection (galerie)
+        file: content/gallery.json
+        fields:
+          - { name: eyebrow, label: Sur-titre, widget: string }
+          - { name: title, label: Titre, widget: text }
+          - { name: intro, label: Texte d'introduction, widget: text }
+          - name: items
+            label: Les propriétés
+            label_singular: propriété
+            widget: list
+            summary: "{{fields.title}} — {{fields.place}}"
+            fields:
+              - { name: title, label: Intitulé, widget: string }
+              - { name: place, label: Lieu, widget: string }
+              - { name: detail, label: Précision, widget: string }
+              - name: category
+                label: Catégorie
+                widget: select
+                options:
+                  - { label: "Mas & Alpilles", value: mas }
+                  - { label: "Maisons de Camargue", value: camargue }
+              - { name: image, label: Photo, widget: image }
+
+      # ── Approche ───────────────────────────────────────────
+      - name: approach
+        label: Notre approche
+        file: content/approach.json
+        fields:
+          - { name: eyebrow, label: Sur-titre, widget: string }
+          - { name: title, label: Titre, widget: text }
+          - name: paragraphs
+            label: Paragraphes
+            widget: list
+            field: { name: paragraph, label: Paragraphe, widget: text }
+          - { name: image, label: Photo, widget: image }
+          - name: pillars
+            label: Les piliers
+            label_singular: pilier
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { name: title, label: Intitulé, widget: string }
+              - { name: text, label: Description, widget: text }
+
+      # ── Contact ────────────────────────────────────────────
+      - name: contact
+        label: Contact
+        file: content/contact.json
+        description: Les textes autour du formulaire. Les champs du formulaire eux-mêmes ne se modifient pas ici.
+        fields:
+          - { name: eyebrow, label: Sur-titre, widget: string }
+          - { name: title, label: Titre, widget: text }
+          - { name: text, label: Texte d'accompagnement, widget: text }
+          - { name: cta, label: Texte du bouton, widget: string }

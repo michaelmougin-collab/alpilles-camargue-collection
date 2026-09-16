@@ -1,0 +1,23 @@
+{
+  "eyebrow": "Notre approche",
+  "title": "Un interlocuteur unique. Une exigence absolue.",
+  "paragraphs": [
+    "Nous croyons qu’un grand projet immobilier se conduit comme une relation de confiance : dans la durée, la discrétion et la justesse du conseil.",
+    "Loin de la logique de volume, nous choisissons de n’accompagner qu’un nombre restreint de clients afin de leur consacrer une attention sans partage."
+  ],
+  "image": "https://images.unsplash.com/photo-1738585608732-49294c24ece0?auto=format&fit=crop&w=1600&q=80",
+  "pillars": [
+    {
+      "title": "Discrétion",
+      "text": "La confidentialité est notre première marque de respect. Rien ne s’expose sans votre accord."
+    },
+    {
+      "title": "Excellence",
+      "text": "Une exigence de chaque instant, du choix des biens à la qualité des partenaires."
+    },
+    {
+      "title": "Relation durable",
+      "text": "Nous nous inscrivons dans le temps long, bien au-delà d’une simple transaction."
+    }
+  ]
+}

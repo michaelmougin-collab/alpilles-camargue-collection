@@ -1,0 +1,49 @@
+{
+  "eyebrow": "Les territoires",
+  "title": "Des Alpilles à la Camargue, une géographie d’exception.",
+  "intro": "Un territoire où la lumière, la pierre et le silence composent l’un des plus beaux art de vivre de Méditerranée.",
+  "items": [
+    {
+      "name": "Saint-Rémy-de-Provence",
+      "note": "L’élégance provençale",
+      "image": "https://images.unsplash.com/photo-1782039361383-74941a941987?auto=format&fit=crop&w=1600&q=80",
+      "wide": true
+    },
+    {
+      "name": "Eygalières",
+      "note": "Le raffinement discret",
+      "image": "https://images.unsplash.com/photo-1770915999076-04383378e0a6?auto=format&fit=crop&w=1600&q=80",
+      "wide": false
+    },
+    {
+      "name": "Maussane-les-Alpilles",
+      "note": "Au cœur des oliveraies",
+      "image": "https://images.unsplash.com/photo-1782038800671-5adef2b3fd54?auto=format&fit=crop&w=1600&q=80",
+      "wide": false
+    },
+    {
+      "name": "Mouriès",
+      "note": "L’or vert des Alpilles",
+      "image": "https://images.unsplash.com/photo-1782039522700-91eb3cb12569?auto=format&fit=crop&w=1600&q=80",
+      "wide": false
+    },
+    {
+      "name": "Arles",
+      "note": "L’âme romaine",
+      "image": "https://images.unsplash.com/photo-1782040652087-e31305731017?auto=format&fit=crop&w=1600&q=80",
+      "wide": false
+    },
+    {
+      "name": "Les Saintes-Maries-de-la-Mer",
+      "note": "L’horizon camarguais",
+      "image": "https://images.unsplash.com/photo-1642269443356-1d0b041acfe8?auto=format&fit=crop&w=1600&q=80",
+      "wide": false
+    },
+    {
+      "name": "Camargue",
+      "note": "La nature à l’état pur",
+      "image": "https://images.unsplash.com/photo-1562747981-1975c624e26e?auto=format&fit=crop&w=2400&q=80",
+      "wide": true
+    }
+  ]
+}
