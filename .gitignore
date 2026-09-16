@@ -12,3 +12,6 @@ yarn-error.log*
 
 # TypeScript build info
 *.tsbuildinfo
+
+# Local Netlify folder
+.netlify

@@ -13,3 +13,44 @@
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# ─────────────────────────────────────────────────────────────
+# Domaines secondaires : tout est redirigé vers le .com, qui est
+# l'adresse canonique. Évite le contenu dupliqué pour le référencement.
+# ─────────────────────────────────────────────────────────────
+
+[[redirects]]
+  from = "https://alpillesetcamarguecollection.fr/*"
+  to = "https://alpillesetcamarguecollection.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.alpillesetcamarguecollection.fr/*"
+  to = "https://alpillesetcamarguecollection.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://alpillesetcamarguecollection.info/*"
+  to = "https://alpillesetcamarguecollection.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.alpillesetcamarguecollection.info/*"
+  to = "https://alpillesetcamarguecollection.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://alpillesetcamarguecollection.store/*"
+  to = "https://alpillesetcamarguecollection.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.alpillesetcamarguecollection.store/*"
+  to = "https://alpillesetcamarguecollection.com/:splat"
+  status = 301
+  force = true
