@@ -11,7 +11,7 @@ export const site = {
   monogram: 'AC',
   tagline: 'Conseil en acquisition, valorisation et location de propriétés d’exception.',
   email: 'contact@alpillesetcamarguecollection.com',
-  phone: '+33 4 90 00 00 00',
+  phone: '+33 6 36 61 01 27',
   // Déclinaisons du logo (dans public/) :
   logoMark: '/logo-monogram.png', // monogramme AC + cercle (fond transparent)
   logoFull: '/logo-emblem-tight.png', // emblème complet transparent — fonds clairs
