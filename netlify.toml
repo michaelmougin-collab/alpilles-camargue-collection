@@ -13,6 +13,11 @@
 [functions]
   directory = "netlify/functions"
 
+# Protection par mot de passe pendant la construction du site.
+# Active uniquement si la variable SITE_PASSWORD est definie.
+[edge_functions]
+  directory = "netlify/edge-functions"
+
 # Cache long sur les fichiers versionnés par Vite (hash dans le nom).
 [[headers]]
   for = "/assets/*"
