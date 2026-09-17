@@ -1,0 +1,4 @@
+# Site en construction : aucune indexation souhaitée pour l'instant.
+# Supprimer ces deux lignes le jour de l'ouverture publique.
+User-agent: *
+Disallow: /
