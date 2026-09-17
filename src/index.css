@@ -11,6 +11,8 @@
   --color-sand: #e7dfd1; /* beige pierre clair */
   --color-clay: #c9bda6; /* beige pierre */
   --color-gold: #a98b5e; /* doré discret */
+  --color-lavender: #efebf3; /* lavande pâle, à peine teintée */
+  --color-lavender-light: #f7f4f9; /* lavande éclaircie, pour le survol */
 
   /* Typographies */
   --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
